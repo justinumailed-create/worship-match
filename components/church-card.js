@@ -32,6 +32,16 @@ export function ChurchCard({ church, compact = false }) {
             <MapPin className="w-4 h-4 text-accent-gold" />
             {church.city}, {church.state}
         </p>
+        {church.website && (
+          <a 
+            href={church.website} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-xs font-medium text-accent-gold/80 hover:text-accent-gold flex items-center gap-2 mt-2 transition-colors"
+          >
+            <span className="text-[10px]">🌐</span> {church.website.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}
+          </a>
+        )}
       </div>
 
       {/* Description */}

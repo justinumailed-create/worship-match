@@ -42,6 +42,20 @@ export function MatchCard({ church, rank }) {
             <span className="flex items-center gap-2">
                 <span className="text-accent-gold">📍</span> {church.city}, {church.state}
             </span>
+            {church.website && (
+              <>
+                <span className="hidden sm:block text-white/10">|</span>
+                <a 
+                  href={church.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-accent-gold/80 hover:text-accent-gold transition-colors"
+                >
+                  <span className="text-accent-gold text-lg leading-none">🌐</span>
+                  <span className="truncate max-w-[200px]">{church.website.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}</span>
+                </a>
+              </>
+            )}
             <span className="hidden sm:block text-white/10">|</span>
             <span className="flex items-center gap-2">
                 <span className="text-accent-gold">👤</span> {church.pastor || "Lead Pastor"}

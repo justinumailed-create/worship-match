@@ -41,6 +41,7 @@ export default function ListYourChurchPage() {
     ministries: [],
     accessibility: [],
     description: "",
+    website: "",
   });
 
   const variants = {
@@ -103,7 +104,8 @@ export default function ListYourChurchPage() {
       worship_style: form.worshipStyle,
       church_size: form.size,
       ministries: form.ministries,
-      accessibility: form.accessibility
+      accessibility: form.accessibility,
+      website: form.website
     };
 
     try {
@@ -250,6 +252,10 @@ export default function ListYourChurchPage() {
                         <div>
                             <span className={labelClasses}>Phone Number</span>
                             <input required type="tel" value={form.phone} onChange={(e) => updateField("phone", e.target.value)} className={inputClasses} placeholder="(000) 000-0000" />
+                        </div>
+                        <div>
+                            <span className={labelClasses}>Website URL</span>
+                            <input type="url" value={form.website} onChange={(e) => updateField("website", e.target.value)} className={inputClasses} placeholder="https://yourchurch.com" />
                         </div>
                     </div>
                   </div>
