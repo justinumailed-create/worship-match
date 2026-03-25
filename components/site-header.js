@@ -38,19 +38,26 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/find-my-church"
-              className="btn-gold py-2.5 px-6"
-            >
-              Get Started
-            </Link>
+            <div className="max-w-[140px] sm:max-w-none">
+              <Link
+                href="/find-my-church"
+                className="bg-[#E6BE4E] text-black font-medium rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-base whitespace-nowrap shadow-md hover:scale-105 transition tracking-wide"
+              >
+                GET STARTED
+              </Link>
+            </div>
           </nav>
 
           {/* Mobile Right Side */}
-          <div className="flex items-center gap-4 md:hidden">
-            <Link href="/find-my-church" className="btn-gold py-2 px-4 text-[10px] font-black">
-                Get Started
-            </Link>
+          <div className="flex items-center gap-3 md:hidden">
+            <div className="max-w-[140px] sm:max-w-none">
+              <Link 
+                href="/find-my-church" 
+                className="bg-[#E6BE4E] text-black font-medium rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-base whitespace-nowrap shadow-md hover:scale-105 transition tracking-wide"
+              >
+                GET STARTED
+              </Link>
+            </div>
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="text-white p-2"
